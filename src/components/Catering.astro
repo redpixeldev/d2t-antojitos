@@ -1,0 +1,48 @@
+---
+import { site } from '@data/content';
+---
+
+<section
+	id='catering'
+	class='scroll-mt-20 bg-brand-amber py-20 md:py-28'
+	aria-labelledby='catering-title'
+>
+	<div class='container grid items-center gap-12 lg:grid-cols-2 lg:gap-16'>
+		<div>
+			<p class='script-accent text-brand-red'>Feeding a crowd?</p>
+			<h2
+				id='catering-title'
+				class='mt-1 text-4xl uppercase text-brand-charcoal md:text-6xl'
+			>
+				We Cater
+			</h2>
+			<p class='mt-5 max-w-lg text-lg text-brand-charcoal/80'>
+				Birthdays, weddings, graduations — bring the streets of Santo Domingo to your table. Big trays of rice, roast
+				pork, plantains, empanadas and more, ready when you are.
+			</p>
+			<a
+				href={site.cateringUrl}
+				target='_blank'
+				rel='noopener noreferrer'
+				class='btn btn-dark mt-8 text-base'
+			>
+				<i
+					class='ri-shopping-bag-3-line'
+					aria-hidden='true'></i>
+				Order Catering on ezCater
+			</a>
+		</div>
+
+		<div class='relative'>
+			<div class='overflow-hidden rounded-[2rem] bg-brand-charcoal p-3 shadow-2xl shadow-brand-charcoal/20'>
+				<img
+					src='/img/catering.jpg'
+					alt='A generous catering spread of assorted Dominican dishes'
+					class='aspect-[4/3] w-full rounded-[1.5rem] object-cover'
+					loading='lazy'
+					decoding='async'
+				/>
+			</div>
+		</div>
+	</div>
+</section>

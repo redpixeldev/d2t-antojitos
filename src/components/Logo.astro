@@ -1,0 +1,21 @@
+---
+interface Props {
+	class?: string;
+}
+const { class: className = 'h-11' } = Astro.props;
+---
+
+<a
+	href='#top'
+	class='inline-flex items-center focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-red'
+	aria-label='Antojitos — back to top'
+>
+	<img
+		src='/img/logo.png'
+		alt='Antojitos'
+		class={`${className} w-auto`}
+		width='1997'
+		height='1314'
+		decoding='async'
+	/>
+</a>

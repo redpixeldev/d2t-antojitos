@@ -1,15 +1,49 @@
-/*
-Please create a `fonts` folder in the `public` folder then add the font files there.
+/* Self-hosted Google Fonts (latin subset) */
 
-Example usage:
-
+/* Anton — display / headings */
 @font-face {
-  font-family: "proxima_nova";
-  src: url("/fonts/proxima_nova_regular-webfont.woff2") format("woff2"),
-    url("proxima_nova_regular-webfont.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
+	font-family: 'Anton';
+	font-style: normal;
+	font-weight: 400;
 	font-display: swap;
+	src: url('/fonts/anton-400.woff2') format('woff2');
 }
 
-*/
+/* Poppins — body */
+@font-face {
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url('/fonts/poppins-400.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url('/fonts/poppins-500.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 600;
+	font-display: swap;
+	src: url('/fonts/poppins-600.woff2') format('woff2');
+}
+@font-face {
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url('/fonts/poppins-700.woff2') format('woff2');
+}
+
+/* Dancing Script — handwritten accents */
+@font-face {
+	font-family: 'Dancing Script';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url('/fonts/dancing-script-700.woff2') format('woff2');
+}

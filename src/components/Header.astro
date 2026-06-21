@@ -1,1 +1,100 @@
-<div class='bg-blue-100'>header</div>
+---
+import Logo from '@components/Logo.astro';
+import { nav, site } from '@data/content';
+---
+
+<header
+	x-data='{ open: false }'
+	class='sticky top-0 z-50 border-b border-brand-cream-dark/70 bg-brand-cream/95 backdrop-blur supports-[backdrop-filter]:bg-brand-cream/80'
+>
+	<div class='container flex h-18 items-center justify-between gap-4 py-3'>
+		<Logo />
+
+		<!-- Desktop nav -->
+		<nav
+			class='hidden items-center gap-8 lg:flex'
+			aria-label='Primary'
+		>
+			{
+				nav.map((item) => (
+					<a
+						href={item.href}
+						class='text-sm font-semibold tracking-wide text-brand-ink/80 transition-colors hover:text-brand-red focus-visible:text-brand-red focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-red'
+					>
+						{item.label}
+					</a>
+				))
+			}
+		</nav>
+
+		<div class='flex items-center gap-2'>
+			<a
+				href={site.phoneHref}
+				class='btn btn-primary hidden sm:inline-flex'
+			>
+				<i
+					class='ri-phone-fill'
+					aria-hidden='true'></i>
+				<span>Call to Order</span>
+			</a>
+
+			<!-- Mobile toggle -->
+			<button
+				type='button'
+				class='grid size-11 place-items-center rounded-full text-brand-charcoal transition-colors hover:bg-brand-cream-dark focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red lg:hidden'
+				:aria-expanded='open ? "true" : "false"'
+				aria-controls='mobile-menu'
+				@click='open = !open'
+			>
+				<span class='sr-only'>Toggle navigation menu</span>
+				<i
+					class='ri-menu-3-line text-2xl'
+					x-show='!open'
+					aria-hidden='true'></i>
+				<i
+					class='ri-close-line text-2xl'
+					x-show='open'
+					x-cloak
+					aria-hidden='true'></i>
+			</button>
+		</div>
+	</div>
+
+	<!-- Mobile menu -->
+	<nav
+		id='mobile-menu'
+		x-show='open'
+		x-cloak
+		x-transition.opacity
+		@keydown.escape.window='open = false'
+		class='border-t border-brand-cream-dark/70 bg-brand-cream lg:hidden'
+		aria-label='Mobile'
+	>
+		<ul class='container flex flex-col py-2'>
+			{
+				nav.map((item) => (
+					<li>
+						<a
+							href={item.href}
+							@click='open = false'
+							class='block rounded-lg px-2 py-3 text-base font-semibold text-brand-ink hover:bg-brand-cream-dark hover:text-brand-red focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red'
+						>
+							{item.label}
+						</a>
+					</li>
+				))
+			}
+			<li class='py-3'>
+				<a
+					href={site.phoneHref}
+					class='btn btn-primary w-full'
+				>
+					<i
+						class='ri-phone-fill'
+						aria-hidden='true'></i>
+					<span>Call {site.phone}</span>
+				</a>
+			</li>
+		</ul>
+	</nav>
+</header>

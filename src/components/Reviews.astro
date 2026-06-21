@@ -1,0 +1,141 @@
+---
+import { reviews } from '@data/content';
+---
+
+<section
+	class='relative isolate overflow-hidden bg-brand-charcoal py-20 text-white md:py-28'
+	aria-labelledby='reviews-title'
+>
+	<img
+		src='/img/reviews-bg.jpg'
+		alt=''
+		aria-hidden='true'
+		class='absolute inset-0 -z-10 size-full object-cover opacity-20'
+		loading='lazy'
+		decoding='async'
+	/>
+	<div
+		class='absolute inset-0 -z-10 bg-brand-charcoal/80'
+		aria-hidden='true'
+	>
+	</div>
+
+	<div class='container'>
+		<div class='text-center'>
+			<p class='script-accent text-brand-amber'>Don’t take our word for it</p>
+			<h2
+				id='reviews-title'
+				class='mt-1 text-4xl uppercase md:text-5xl'
+			>
+				Customer Reviews
+			</h2>
+		</div>
+
+		<div class='reviews-swiper swiper mt-12 !overflow-visible'>
+			<div class='swiper-wrapper'>
+				{
+					reviews.map((review) => (
+						<div class='swiper-slide h-auto self-stretch pb-2'>
+							<figure class='flex h-full flex-col rounded-3xl bg-brand-cream p-7 text-brand-ink shadow-xl'>
+								<div
+									class='flex gap-0.5 text-brand-amber'
+									aria-label='Rated 5 out of 5 stars'
+								>
+									{[0, 1, 2, 3, 4].map(() => (
+										<i
+											class='ri-star-fill'
+											aria-hidden='true'
+										/>
+									))}
+								</div>
+								<blockquote class='mt-4 flex-1 text-[15px] leading-relaxed text-brand-ink/85'>
+									“{review.quote}”
+								</blockquote>
+								<figcaption class='mt-5 flex items-center gap-3 border-t border-brand-cream-dark pt-4'>
+									<span class='grid size-10 place-items-center rounded-full bg-brand-red font-display text-lg text-white'>
+										{review.name.charAt(0)}
+									</span>
+									<span>
+										<span class='block font-semibold text-brand-charcoal'>{review.name}</span>
+										<span class='block text-xs text-brand-ink/55'>{review.source}</span>
+									</span>
+								</figcaption>
+							</figure>
+						</div>
+					))
+				}
+			</div>
+		</div>
+
+		<div class='mt-8 flex items-center justify-center gap-4'>
+			<button
+				type='button'
+				class='reviews-prev grid size-11 place-items-center rounded-full border border-white/30 text-white transition-colors hover:bg-white hover:text-brand-charcoal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-amber'
+			>
+				<span class='sr-only'>Previous reviews</span>
+				<i
+					class='ri-arrow-left-line text-xl'
+					aria-hidden='true'></i>
+			</button>
+			<div
+				class='reviews-pagination flex items-center gap-2'
+				aria-hidden='true'
+			>
+			</div>
+			<button
+				type='button'
+				class='reviews-next grid size-11 place-items-center rounded-full border border-white/30 text-white transition-colors hover:bg-white hover:text-brand-charcoal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-amber'
+			>
+				<span class='sr-only'>Next reviews</span>
+				<i
+					class='ri-arrow-right-line text-xl'
+					aria-hidden='true'></i>
+			</button>
+		</div>
+	</div>
+</section>
+
+<style>
+	.reviews-pagination :global(.swiper-pagination-bullet) {
+		width: 0.625rem;
+		height: 0.625rem;
+		display: inline-block;
+		border-radius: 9999px;
+		background: rgba(255, 255, 255, 0.4);
+		transition: background-color 0.3s;
+	}
+	.reviews-pagination :global(.swiper-pagination-bullet-active) {
+		background: var(--color-brand-amber);
+	}
+</style>
+
+<script>
+	import Swiper from 'swiper';
+	import { Navigation, Pagination, A11y, Keyboard, Autoplay } from 'swiper/modules';
+	import 'swiper/css';
+
+	const init = () => {
+		new Swiper('.reviews-swiper', {
+			modules: [Navigation, Pagination, A11y, Keyboard, Autoplay],
+			slidesPerView: 1,
+			spaceBetween: 24,
+			grabCursor: true,
+			keyboard: { enabled: true },
+			autoplay: { delay: 6000, disableOnInteraction: true, pauseOnMouseEnter: true },
+			navigation: { prevEl: '.reviews-prev', nextEl: '.reviews-next' },
+			pagination: { el: '.reviews-pagination', clickable: true },
+			a11y: {
+				prevSlideMessage: 'Previous review',
+				nextSlideMessage: 'Next review',
+				paginationBulletMessage: 'Go to review {{index}}',
+			},
+			breakpoints: {
+				640: { slidesPerView: 2 },
+				1024: { slidesPerView: 3 },
+			},
+		});
+	};
+
+	if (document.readyState !== 'loading') init();
+	else document.addEventListener('DOMContentLoaded', init);
+</script>

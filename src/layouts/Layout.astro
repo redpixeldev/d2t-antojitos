@@ -1,7 +1,15 @@
 ---
 import '../styles/main.css';
 
-const { title } = Astro.props;
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const {
+	title = 'Antojitos · The Ultimate Dominican Food Experience in Somerville',
+	description = 'Antojitos brings authentic Dominican flavors to Somerville, MA — yaroas, chimichurri burgers, tres golpes, empanadas, natural juices and more. Dine in, take out or order catering.',
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -13,14 +21,33 @@ const { title } = Astro.props;
 			content='width=device-width,initial-scale=1.0'
 		/>
 		<title>{title}</title>
-		<link
-			rel='preconnect'
-			href='https://fonts.googleapis.com'
+		<meta
+			name='description'
+			content={description}
 		/>
-		<link
-			rel='preconnect'
-			href='https://fonts.gstatic.com'
+		<meta
+			name='theme-color'
+			content='#e0452b'
 		/>
+
+		<!-- Open Graph -->
+		<meta
+			property='og:type'
+			content='website'
+		/>
+		<meta
+			property='og:title'
+			content={title}
+		/>
+		<meta
+			property='og:description'
+			content={description}
+		/>
+		<meta
+			property='og:image'
+			content='/img/hero.jpg'
+		/>
+
 		<link
 			rel='icon'
 			type='image/png'
@@ -28,12 +55,48 @@ const { title } = Astro.props;
 			href='/favicon.png'
 		/>
 
-		<script
-			defer
-			src='https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js'
-		></script>
+		<!-- Self-hosted Remix Icon -->
+		<link
+			rel='preload'
+			as='font'
+			type='font/woff2'
+			href='/remixicon.woff2'
+			crossorigin
+		/>
+		<link
+			rel='stylesheet'
+			href='/remixicon.css'
+		/>
+
+		<!-- Preload critical self-hosted fonts -->
+		<link
+			rel='preload'
+			as='font'
+			type='font/woff2'
+			href='/fonts/anton-400.woff2'
+			crossorigin
+		/>
+		<link
+			rel='preload'
+			as='font'
+			type='font/woff2'
+			href='/fonts/poppins-400.woff2'
+			crossorigin
+		/>
 	</head>
-	<body>
+	<body class='overflow-x-hidden'>
+		<a
+			href='#main'
+			class='btn btn-primary sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100]'
+		>
+			Skip to content
+		</a>
 		<slot />
+
+		<script>
+			import Alpine from 'alpinejs';
+			(window as any).Alpine = Alpine;
+			Alpine.start();
+		</script>
 	</body>
 </html>

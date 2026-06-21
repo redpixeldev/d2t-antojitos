@@ -1,0 +1,61 @@
+---
+const stats = [
+	{ value: '100%', label: 'Homemade' },
+	{ value: 'Daily', label: 'Lunch Special' },
+	{ value: 'Family', label: 'Fun & Cozy' },
+];
+---
+
+<section
+	id='about'
+	class='bg-brand-cream py-20 md:py-28'
+	aria-labelledby='about-title'
+>
+	<div class='container grid items-center gap-12 lg:grid-cols-2 lg:gap-16'>
+		<!-- Image with sticker -->
+		<div class='relative'>
+			<div class='overflow-hidden rounded-[2rem] shadow-xl shadow-brand-charcoal/10'>
+				<img
+					src='/img/about.jpg'
+					alt='A Dominican plate — yellow rice with stewed meat and sweet fried plantains'
+					class='aspect-[4/5] w-full object-cover'
+					loading='lazy'
+					decoding='async'
+				/>
+			</div>
+			<div
+				class='absolute -top-5 -left-5 grid size-28 -rotate-12 place-items-center rounded-full bg-brand-amber text-center shadow-lg md:size-32'
+				aria-hidden='true'
+			>
+				<span class='font-script text-xl leading-tight text-brand-charcoal md:text-2xl'>¡Hola,<br />mi amor!</span>
+			</div>
+		</div>
+
+		<!-- Copy -->
+		<div>
+			<p class='script-accent text-brand-red'>A neighborhood hidden gem</p>
+			<h2
+				id='about-title'
+				class='mt-2 text-4xl uppercase md:text-5xl'
+			>
+				About Us
+			</h2>
+			<p class='mt-5 text-lg text-brand-ink/80'>
+				Explore the authentic Dominican flavors at Antojitos, a family-owned spot in the heart of Somerville. With a
+				passion for vibrant flavors, we serve a wide selection of snacks — from yaroas and burgers to natural juices
+				and appetizers — perfect for any time of the day.
+			</p>
+
+			<dl class='mt-10 grid grid-cols-3 gap-4 border-t border-brand-cream-dark pt-8'>
+				{
+					stats.map((s) => (
+						<div>
+							<dt class='font-display text-3xl text-brand-red md:text-4xl'>{s.value}</dt>
+							<dd class='mt-1 text-sm font-medium tracking-wide text-brand-ink/70'>{s.label}</dd>
+						</div>
+					))
+				}
+			</dl>
+		</div>
+	</div>
+</section>

@@ -3,35 +3,109 @@
 @import 'tailwindcss';
 
 @theme {
+	/* Fonts */
 	--font-*: initial;
-	--font-heading: sans-serif;
-	--font-body: sans-serif;
+	--font-display: 'Anton', 'Arial Narrow', sans-serif;
+	--font-body: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+	--font-script: 'Dancing Script', 'Segoe Script', cursive;
 
-	--color-brand-primary: ;
-}
-
-@utility container {
-	margin-inline: auto;
-	padding-inline: 1rem;
+	/* Brand palette (seeded from Tailwind, tuned to the design) */
+	--color-brand-red: #e0452b;
+	--color-brand-red-dark: #c2381f;
+	--color-brand-amber: #f0a23c;
+	--color-brand-amber-dark: #e08a1e;
+	--color-brand-cream: #faf4ea;
+	--color-brand-cream-dark: #f1e7d6;
+	--color-brand-charcoal: #1b1815;
+	--color-brand-charcoal-light: #2a2521;
+	--color-brand-ink: #2a2622;
 }
 
 @plugin "@tailwindcss/typography";
 @plugin "@tailwindcss/forms";
 
+@utility container {
+	margin-inline: auto;
+	max-width: 80rem; /* 1280px */
+	padding-inline: 1.25rem;
+}
+
+/* Buttons ---------------------------------------------------------------- */
 @utility btn {
-	@apply transition-colors duration-300 ease-linear;
+	@apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold tracking-wide
+		transition-colors duration-300 ease-linear
+		focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-current;
 }
 
 @utility btn-primary {
-	@apply bg-brand-primary text-white;
+	@apply bg-brand-red text-white hover:bg-brand-red-dark;
+}
+
+@utility btn-amber {
+	@apply bg-brand-amber text-brand-charcoal hover:bg-brand-amber-dark;
+}
+
+@utility btn-outline {
+	@apply border border-white/70 bg-white/5 text-white backdrop-blur-sm hover:bg-white hover:text-brand-charcoal;
+}
+
+@utility btn-dark {
+	@apply bg-brand-charcoal text-white hover:bg-brand-charcoal-light;
+}
+
+/* Decorative section eyebrow in script font ----------------------------- */
+@utility script-accent {
+	font-family: var(--font-script);
+	@apply text-2xl leading-none;
 }
 
 @layer base {
 	html {
-		@apply font-body antialiased;
+		@apply scroll-smooth font-body text-brand-ink antialiased;
+	}
+
+	body {
+		@apply bg-brand-cream;
+	}
+
+	h1,
+	h2,
+	h3 {
+		font-family: var(--font-display);
+		@apply font-normal tracking-wide;
 	}
 
 	[x-cloak] {
 		@apply hidden!;
 	}
+
+	/* Respect reduced-motion preferences (WCAG 2.2) */
+	@media (prefers-reduced-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
+		*,
+		*::before,
+		*::after {
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.01ms !important;
+		}
+	}
+}
+
+/* Marquee ticker --------------------------------------------------------- */
+@keyframes marquee {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-50%);
+	}
+}
+.animate-marquee {
+	animation: marquee 30s linear infinite;
+}
+.marquee:hover .animate-marquee {
+	animation-play-state: paused;
 }

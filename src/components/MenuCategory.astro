@@ -1,0 +1,37 @@
+---
+import type { MenuCategory } from '@data/content';
+interface Props {
+	category: MenuCategory;
+}
+const { category } = Astro.props;
+---
+
+<div class='rounded-2xl border border-brand-cream-dark bg-white/60 p-6 shadow-sm'>
+	<h3 class='flex items-center gap-3 text-xl uppercase text-brand-charcoal'>
+		<span
+			class='grid size-9 place-items-center rounded-lg bg-brand-red/10 text-brand-red'
+			aria-hidden='true'
+		>
+			<i class={`${category.icon} text-lg`}></i>
+		</span>
+		{category.title}
+	</h3>
+
+	<ul class='mt-4 space-y-3'>
+		{
+			category.items.map((item) => (
+				<li class='flex items-baseline gap-2 text-sm'>
+					<span class='font-medium text-brand-ink'>
+						{item.name}
+						{item.note && <span class='ml-1 font-normal text-brand-ink/55'>— {item.note}</span>}
+					</span>
+					<span
+						class='min-w-3 flex-1 translate-y-[-3px] border-b border-dotted border-brand-ink/25'
+						aria-hidden='true'
+					/>
+					<span class='shrink-0 font-semibold text-brand-red'>{item.price}</span>
+				</li>
+			))
+		}
+	</ul>
+</div>

@@ -1,0 +1,87 @@
+---
+import { highlights } from '@data/content';
+const { feature, cards } = highlights;
+---
+
+<section
+	class='bg-brand-red py-20 text-white md:py-28'
+	aria-labelledby='highlights-title'
+>
+	<div class='container'>
+		<div class='flex flex-wrap items-end justify-between gap-6'>
+			<div>
+				<p class='script-accent text-brand-amber'>Our favorites</p>
+				<h2
+					id='highlights-title'
+					class='mt-1 text-4xl uppercase md:text-5xl'
+				>
+					Menu Highlights
+				</h2>
+			</div>
+			<a
+				href='#menu'
+				class='btn btn-amber'
+			>
+				See full menu
+				<i
+					class='ri-arrow-right-line'
+					aria-hidden='true'></i>
+			</a>
+		</div>
+
+		<div class='mt-10 grid gap-5 lg:grid-cols-2'>
+			<!-- Feature card -->
+			<article class='group relative overflow-hidden rounded-3xl'>
+				<img
+					src={feature.img}
+					alt={feature.alt}
+					class='aspect-[16/12] w-full object-cover transition-transform duration-500 group-hover:scale-105'
+					loading='lazy'
+					decoding='async'
+				/>
+				<div
+					class='absolute inset-0 bg-gradient-to-t from-brand-charcoal/90 via-brand-charcoal/20 to-transparent'
+					aria-hidden='true'
+				>
+				</div>
+				<div class='absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-6'>
+					<div>
+						<h3 class='text-3xl uppercase md:text-4xl'>{feature.name}</h3>
+						<p class='mt-1 max-w-sm text-sm text-white/85'>{feature.desc}</p>
+					</div>
+					<span class='shrink-0 rounded-full bg-brand-amber px-4 py-2 font-display text-lg text-brand-charcoal'>
+						{feature.price}
+					</span>
+				</div>
+			</article>
+
+			<!-- 3 stacked cards -->
+			<div class='grid gap-5 sm:grid-cols-3 lg:grid-cols-1'>
+				{
+					cards.map((card) => (
+						<article class='group relative overflow-hidden rounded-3xl lg:flex lg:items-stretch'>
+							<img
+								src={card.img}
+								alt={card.alt}
+								class='aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-105 lg:aspect-auto lg:w-48 lg:shrink-0'
+								loading='lazy'
+								decoding='async'
+							/>
+							<div
+								class='absolute inset-0 bg-gradient-to-t from-brand-charcoal/85 to-transparent lg:hidden'
+								aria-hidden='true'
+							/>
+							<div class='absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-5 lg:static lg:flex-1 lg:items-center lg:bg-brand-charcoal-light'>
+								<div>
+									<h3 class='text-2xl uppercase'>{card.name}</h3>
+									<p class='mt-0.5 text-sm text-white/80'>{card.desc}</p>
+								</div>
+								<span class='shrink-0 font-display text-xl text-brand-amber'>{card.price}</span>
+							</div>
+						</article>
+					))
+				}
+			</div>
+		</div>
+	</div>
+</section>

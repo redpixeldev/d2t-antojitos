@@ -1,15 +1,32 @@
 ---
 import Layout from '@layouts/Layout.astro';
+import TopBar from '@components/TopBar.astro';
 import Header from '@components/Header.astro';
+import Hero from '@components/Hero.astro';
+import About from '@components/About.astro';
+import MenuHighlights from '@components/MenuHighlights.astro';
+import FullMenu from '@components/FullMenu.astro';
+import Reviews from '@components/Reviews.astro';
+import Catering from '@components/Catering.astro';
+import Gallery from '@components/Gallery.astro';
+import Visit from '@components/Visit.astro';
 import Footer from '@components/Footer.astro';
+import MobileCTA from '@components/MobileCTA.astro';
 ---
 
-<Layout title='Astro'>
+<Layout>
+	<TopBar />
 	<Header />
-	<div class=''>
-		<h1 class='mt-4 text-xl'>Home</h1>
-		<p>This is the Astro homepage page.</p>
-		<img src='/img/icon-home.png' />
-	</div>
+	<main id='main'>
+		<Hero />
+		<About />
+		<MenuHighlights />
+		<FullMenu />
+		<Reviews />
+		<Catering />
+		<Gallery />
+		<Visit />
+	</main>
 	<Footer />
+	<MobileCTA />
 </Layout>

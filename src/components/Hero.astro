@@ -1,0 +1,84 @@
+---
+import { site } from '@data/content';
+---
+
+<section
+	id='top'
+	class='relative isolate flex min-h-[88vh] items-center overflow-hidden bg-brand-charcoal'
+>
+	<!-- Background image -->
+	<img
+		src='/img/hero.jpg'
+		alt='A spread of crispy Dominican fried chicken and golden fries'
+		class='absolute inset-0 -z-10 size-full object-cover'
+		fetchpriority='high'
+		decoding='async'
+	/>
+	<div
+		class='absolute inset-0 -z-10 bg-gradient-to-r from-brand-charcoal/90 via-brand-charcoal/70 to-brand-charcoal/30'
+		aria-hidden='true'
+	>
+	</div>
+
+	<div class='container py-20'>
+		<div class='max-w-2xl text-white'>
+			<p
+				class='mb-5 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-xs font-semibold tracking-[0.2em] uppercase backdrop-blur'
+			>
+				<i
+					class='ri-map-pin-fill text-brand-amber'
+					aria-hidden='true'></i>
+				{site.tagline}
+			</p>
+
+			<h1 class='text-5xl leading-[0.95] uppercase sm:text-6xl md:text-7xl'>
+				The Ultimate <span class='text-brand-amber'>Dominican</span> Food
+				<span class='text-brand-red'>Experience</span>
+			</h1>
+
+			<p class='mt-6 max-w-xl text-lg text-white/85'>
+				Explore authentic Dominican flavors at Antojitos, where every bite transports you to the streets of Santo
+				Domingo.
+			</p>
+
+			<div class='mt-8 flex flex-wrap items-center gap-3'>
+				<a
+					href={site.phoneHref}
+					class='btn btn-primary text-base'
+				>
+					<i
+						class='ri-phone-fill'
+						aria-hidden='true'></i>
+					Call to Order
+				</a>
+				<a
+					href='#menu'
+					class='btn btn-outline text-base'
+				>
+					<i
+						class='ri-restaurant-2-line'
+						aria-hidden='true'></i>
+					View Menu
+				</a>
+			</div>
+
+			<p class='mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-white/75'>
+				<span class='inline-flex items-center gap-1.5'>
+					<i
+						class='ri-phone-line text-brand-amber'
+						aria-hidden='true'></i>
+					{site.phone}
+				</span>
+				<span
+					class='hidden sm:inline'
+					aria-hidden='true'>·</span>
+				<span class='inline-flex items-center gap-1.5'>
+					<i
+						class='ri-time-line text-brand-amber'
+						aria-hidden='true'></i>
+					Open Mon–Sat · 9AM – 8PM
+				</span>
+			</p>
+		</div>
+	</div>
+</section>

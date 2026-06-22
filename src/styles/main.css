@@ -14,7 +14,7 @@
 	--color-brand-red-dark: #c2381f;
 	--color-brand-amber: #f0a23c;
 	--color-brand-amber-dark: #e08a1e;
-	--color-brand-cream: #faf4ea;
+	--color-brand-cream: #faf4e7;
 	--color-brand-cream-dark: #f1e7d6;
 	--color-brand-charcoal: #1b1815;
 	--color-brand-charcoal-light: #2a2521;
@@ -38,11 +38,39 @@
 }
 
 @utility btn-primary {
-	@apply bg-brand-red text-white hover:bg-brand-red-dark;
+	@apply font-bold text-white;
+	background-color: #ea342c;
+	box-shadow: 0 5px 0 0 #9b1f14;
+	transition:
+		background-color 0.2s ease,
+		box-shadow 0.1s ease,
+		transform 0.1s ease;
+	&:hover {
+		background-color: #9b1f14;
+		box-shadow: 0 5px 0 0 #e33127;
+	}
+	&:active {
+		transform: translateY(4px);
+		box-shadow: 0 1px 0 0 #9b1f14;
+	}
 }
 
 @utility btn-amber {
-	@apply bg-brand-amber text-brand-charcoal hover:bg-brand-amber-dark;
+	@apply font-bold text-brand-charcoal;
+	background-color: #f0a23c;
+	box-shadow: 0 5px 0 0 #c8851d;
+	transition:
+		background-color 0.2s ease,
+		box-shadow 0.1s ease,
+		transform 0.1s ease;
+	&:hover {
+		background-color: #c8851d;
+		box-shadow: 0 5px 0 0 #f0a23c;
+	}
+	&:active {
+		transform: translateY(4px);
+		box-shadow: 0 1px 0 0 #c8851d;
+	}
 }
 
 @utility btn-outline {
@@ -50,12 +78,14 @@
 }
 
 @utility btn-dark {
-	@apply bg-brand-charcoal text-white hover:bg-brand-charcoal-light;
+	@apply bg-brand-charcoal text-white hover:bg-[#e33127];
 }
 
 /* Decorative section eyebrow in script font ----------------------------- */
 @utility script-accent {
 	font-family: var(--font-script);
+	font-weight: 700;
+	font-variation-settings: 'wght' 700;
 	@apply text-2xl leading-none;
 }
 

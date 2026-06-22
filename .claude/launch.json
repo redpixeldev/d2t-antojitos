@@ -2,10 +2,11 @@
 	"version": "0.0.1",
 	"configurations": [
 		{
-			"name": "antojitos",
+			"name": "d2t-antojitos",
 			"runtimeExecutable": "pnpm",
-			"runtimeArgs": ["dev"],
-			"port": 4321
+			"runtimeArgs": ["dev", "--port", "4330"],
+			"port": 4330,
+			"autoPort": true
 		}
 	]
 }

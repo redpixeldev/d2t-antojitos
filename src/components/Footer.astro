@@ -1,121 +1,38 @@
 ---
 import Logo from '@components/Logo.astro';
-import { nav, site, hours } from '@data/content';
+import { site } from '@data/content';
 const year = new Date().getFullYear();
 ---
 
-<footer class='bg-brand-charcoal text-white'>
-	<div class='container grid gap-10 py-16 md:grid-cols-2 lg:grid-cols-4'>
-		<!-- Brand -->
-		<div class='lg:col-span-1'>
-			<span class='inline-block rounded-xl bg-white/95 px-3 py-2'>
-				<Logo class='h-11' />
-			</span>
-			<p class='mt-4 max-w-xs text-sm text-white/65'>
-				The ultimate Dominican food experience in Somerville — made fresh, served with love.
-			</p>
-			<div class='mt-5 flex gap-3'>
-				<a
-					href={site.social.instagram}
-					target='_blank'
-					rel='noopener noreferrer'
-					class='grid size-10 place-items-center rounded-full bg-white/10 transition-colors hover:bg-brand-red focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-amber'
-				>
-					<span class='sr-only'>Instagram</span>
-					<i
-						class='ri-instagram-line text-lg'
-						aria-hidden='true'></i>
-				</a>
-				<a
-					href={site.social.facebook}
-					target='_blank'
-					rel='noopener noreferrer'
-					class='grid size-10 place-items-center rounded-full bg-white/10 transition-colors hover:bg-brand-red focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-amber'
-				>
-					<span class='sr-only'>Facebook</span>
-					<i
-						class='ri-facebook-circle-line text-lg'
-						aria-hidden='true'></i>
-				</a>
-			</div>
-		</div>
+<footer class='bg-[#241b12] text-white'>
+	<div
+		class='container flex flex-col items-center gap-10 py-14 sm:flex-row sm:justify-between sm:gap-6 md:py-16'
+	>
+		<!-- Logo -->
+		<Logo class='h-24' />
 
-		<!-- Quick links -->
-		<nav aria-label='Footer'>
-			<h2 class='text-lg uppercase text-brand-amber'>Explore</h2>
-			<ul class='mt-4 space-y-2.5 text-sm'>
-				{
-					nav.map((item) => (
-						<li>
-							<a
-								href={item.href}
-								class='text-white/70 transition-colors hover:text-white focus-visible:underline'
-							>
-								{item.label}
-							</a>
-						</li>
-					))
-				}
-			</ul>
-		</nav>
+		<!-- Contact · social · copyright -->
+		<div class='flex flex-col items-center gap-2.5 text-center sm:items-end sm:text-right'>
+			<a
+				href={site.phoneHref}
+				class='text-xl font-bold tracking-wide text-brand-amber transition-colors hover:text-[#ea342c] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-amber'
+			>
+				{site.phone}
+			</a>
 
-		<!-- Contact -->
-		<div>
-			<h2 class='text-lg uppercase text-brand-amber'>Find Us</h2>
-			<address class='mt-4 space-y-2.5 text-sm text-white/70 not-italic'>
-				<p class='flex items-start gap-2'>
-					<i
-						class='ri-map-pin-2-fill mt-0.5 text-brand-red'
-						aria-hidden='true'></i>
-					<span>{site.address.street}, {site.address.city}</span>
-				</p>
-				<p class='flex items-center gap-2'>
-					<i
-						class='ri-phone-fill text-brand-red'
-						aria-hidden='true'></i>
-					<a
-						href={site.phoneHref}
-						class='hover:text-white'>{site.phone}</a
-					>
-				</p>
-				<p class='flex items-center gap-2'>
-					<i
-						class='ri-instagram-line text-brand-red'
-						aria-hidden='true'></i>
-					<a
-						href={site.social.instagram}
-						target='_blank'
-						rel='noopener noreferrer'
-						class='hover:text-white'>@antojitossomerville</a
-					>
-				</p>
-			</address>
-		</div>
+			<a
+				href={site.social.instagram}
+				target='_blank'
+				rel='noopener noreferrer'
+				class='inline-flex items-center gap-2 font-bold text-white transition-colors hover:text-brand-amber focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-amber'
+			>
+				<i
+					class='ri-instagram-line text-xl'
+					aria-hidden='true'></i>
+				@antojitossomerville
+			</a>
 
-		<!-- Hours -->
-		<div>
-			<h2 class='text-lg uppercase text-brand-amber'>Hours</h2>
-			<dl class='mt-4 space-y-2.5 text-sm'>
-				{
-					hours.map((row) => (
-						<div class='flex justify-between gap-4'>
-							<dt class='text-white/70'>{row.days}</dt>
-							<dd class={row.closed ? 'font-semibold text-brand-red' : 'text-white/90'}>{row.time}</dd>
-						</div>
-					))
-				}
-			</dl>
-		</div>
-	</div>
-
-	<div class='border-t border-white/10'>
-		<div class='container flex flex-col items-center justify-between gap-2 py-6 text-xs text-white/50 sm:flex-row'>
-			<p>© {year} Antojitos. All rights reserved.</p>
-			<p>
-				Made with <i
-					class='ri-heart-3-fill text-brand-red'
-					aria-hidden='true'></i> in Somerville, MA
-			</p>
+			<p class='text-sm text-white/55'>© {year} Antojitos · The ultimate Dominican food experience</p>
 		</div>
 	</div>
 </footer>

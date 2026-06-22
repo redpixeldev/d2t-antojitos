@@ -6,30 +6,28 @@ interface Props {
 const { category } = Astro.props;
 ---
 
-<div class='rounded-2xl border border-brand-cream-dark bg-white/60 p-6 shadow-sm'>
-	<h3 class='flex items-center gap-3 text-xl uppercase text-brand-charcoal'>
+<div class='overflow-hidden rounded-2xl border-2 border-brand-charcoal'>
+	<!-- Header -->
+	<div class='flex items-center gap-3 border-b border-brand-charcoal/15 px-5 py-3.5'>
 		<span
-			class='grid size-9 place-items-center rounded-lg bg-brand-red/10 text-brand-red'
+			class='grid size-9 shrink-0 place-items-center rounded-lg bg-brand-charcoal text-brand-amber'
 			aria-hidden='true'
 		>
 			<i class={`${category.icon} text-lg`}></i>
 		</span>
-		{category.title}
-	</h3>
+		<h3 class='text-xl uppercase text-brand-charcoal'>{category.title}</h3>
+	</div>
 
-	<ul class='mt-4 space-y-3'>
+	<!-- Items -->
+	<ul class='px-5 py-1'>
 		{
 			category.items.map((item) => (
-				<li class='flex items-baseline gap-2 text-sm'>
-					<span class='font-medium text-brand-ink'>
-						{item.name}
-						{item.note && <span class='ml-1 font-normal text-brand-ink/55'>— {item.note}</span>}
-					</span>
-					<span
-						class='min-w-3 flex-1 translate-y-[-3px] border-b border-dotted border-brand-ink/25'
-						aria-hidden='true'
-					/>
-					<span class='shrink-0 font-semibold text-brand-red'>{item.price}</span>
+				<li class='border-b border-dotted border-brand-charcoal/20 py-3 last:border-b-0'>
+					<div class='flex items-baseline justify-between gap-4'>
+						<span class='font-semibold text-brand-charcoal'>{item.name}</span>
+						{item.price && <span class='shrink-0 font-bold text-brand-red'>{item.price}</span>}
+					</div>
+					{item.note && <p class='mt-1 text-xs leading-snug text-brand-ink/55'>{item.note}</p>}
 				</li>
 			))
 		}

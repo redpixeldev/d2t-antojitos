@@ -4,44 +4,45 @@ import { site } from '@data/content';
 
 <section
 	id='top'
-	class='relative isolate flex min-h-[88vh] items-center overflow-hidden bg-brand-charcoal'
+	class='relative isolate flex xl:min-h-[88vh] items-center overflow-hidden bg-brand-charcoal'
 >
 	<!-- Background image -->
 	<img
 		src='/img/hero.jpg'
-		alt='A spread of crispy Dominican fried chicken and golden fries'
-		class='absolute inset-0 -z-10 size-full object-cover'
+		alt='An overhead spread of burgers, golden fries and iced drinks on a table'
+		class='absolute inset-0 -z-10 size-full object-cover object-center'
 		fetchpriority='high'
 		decoding='async'
 	/>
 	<div
-		class='absolute inset-0 -z-10 bg-gradient-to-r from-brand-charcoal/90 via-brand-charcoal/70 to-brand-charcoal/30'
+		class='absolute inset-0 -z-10 bg-gradient-to-r from-brand-charcoal/92 via-brand-charcoal/70 to-brand-charcoal/25'
 		aria-hidden='true'
 	>
 	</div>
 
 	<div class='container py-20'>
-		<div class='max-w-2xl text-white'>
+		<div class='max-w-2xl'>
 			<p
-				class='mb-5 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-xs font-semibold tracking-[0.2em] uppercase backdrop-blur'
+				class='mb-6 inline-flex items-center gap-2 rounded-full bg-brand-amber px-5 py-2 text-xs font-bold tracking-[0.2em] text-brand-charcoal uppercase'
 			>
 				<i
-					class='ri-map-pin-fill text-brand-amber'
+					class='ri-map-pin-fill text-brand-charcoal'
 					aria-hidden='true'></i>
-				{site.tagline}
+				Magoon Square · Somerville
 			</p>
 
-			<h1 class='text-5xl leading-[0.95] uppercase sm:text-6xl md:text-7xl'>
-				The Ultimate <span class='text-brand-amber'>Dominican</span> Food
-				<span class='text-brand-red'>Experience</span>
+			<h1 class='font-display text-6xl leading-[0.9] text-brand-cream uppercase sm:text-7xl lg:text-8xl'>
+				<span class='block'>The Ultimate</span>
+				<span class='block'>Dominican Food</span>
+				<span class='block text-brand-amber'>Experience</span>
 			</h1>
 
-			<p class='mt-6 max-w-xl text-lg text-white/85'>
-				Explore authentic Dominican flavors at Antojitos, where every bite transports you to the streets of Santo
+			<p class='mt-7 max-w-md text-lg text-white/80'>
+				Explore authentic Dominican flavor at Antojitos, where every bite transports you to the streets of Santo
 				Domingo.
 			</p>
 
-			<div class='mt-8 flex flex-wrap items-center gap-3'>
+			<div class='mt-9 flex flex-wrap items-center gap-3'>
 				<a
 					href={site.phoneHref}
 					class='btn btn-primary text-base'
@@ -55,30 +56,12 @@ import { site } from '@data/content';
 					href='#menu'
 					class='btn btn-outline text-base'
 				>
-					<i
-						class='ri-restaurant-2-line'
-						aria-hidden='true'></i>
 					View Menu
+					<i
+						class='ri-arrow-right-line'
+						aria-hidden='true'></i>
 				</a>
 			</div>
-
-			<p class='mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-white/75'>
-				<span class='inline-flex items-center gap-1.5'>
-					<i
-						class='ri-phone-line text-brand-amber'
-						aria-hidden='true'></i>
-					{site.phone}
-				</span>
-				<span
-					class='hidden sm:inline'
-					aria-hidden='true'>·</span>
-				<span class='inline-flex items-center gap-1.5'>
-					<i
-						class='ri-time-line text-brand-amber'
-						aria-hidden='true'></i>
-					Open Mon–Sat · 9AM – 8PM
-				</span>
-			</p>
 		</div>
 	</div>
 </section>

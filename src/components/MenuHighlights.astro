@@ -10,7 +10,7 @@ const { feature, cards } = highlights;
 	<div class='container'>
 		<div class='flex flex-wrap items-end justify-between gap-6'>
 			<div>
-				<p class='script-accent text-brand-amber'>Our favorites</p>
+				<p class='script-accent text-brand-amber'>Fan favorites</p>
 				<h2
 					id='highlights-title'
 					class='mt-1 text-4xl uppercase md:text-5xl'
@@ -31,11 +31,11 @@ const { feature, cards } = highlights;
 
 		<div class='mt-10 grid gap-5 lg:grid-cols-2'>
 			<!-- Feature card -->
-			<article class='group relative overflow-hidden rounded-3xl'>
+			<article class='group relative overflow-hidden border-3 rounded-3xl border-black'>
 				<img
 					src={feature.img}
 					alt={feature.alt}
-					class='aspect-[16/12] w-full object-cover transition-transform duration-500 group-hover:scale-105'
+					class='aspect-[16/12] w-full h-full object-cover transition-transform duration-500 group-hover:scale-105'
 					loading='lazy'
 					decoding='async'
 				/>
@@ -56,14 +56,14 @@ const { feature, cards } = highlights;
 			</article>
 
 			<!-- 3 stacked cards -->
-			<div class='grid gap-5 sm:grid-cols-3 lg:grid-cols-1'>
+			<div class='grid gap-5 sm:grid-cols-3 lg:h-full lg:grid-cols-1 lg:grid-rows-3'>
 				{
 					cards.map((card) => (
-						<article class='group relative overflow-hidden rounded-3xl lg:flex lg:items-stretch'>
+						<article class='group relative overflow-hidden rounded-3xl border-3 border-black lg:flex lg:h-full lg:items-stretch'>
 							<img
 								src={card.img}
 								alt={card.alt}
-								class='aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-105 lg:aspect-auto lg:w-48 lg:shrink-0'
+								class='aspect-[16/10] w-full object-cover transition-transform duration-500 group-hover:scale-105 lg:aspect-auto lg:h-full lg:w-48 lg:shrink-0'
 								loading='lazy'
 								decoding='async'
 							/>

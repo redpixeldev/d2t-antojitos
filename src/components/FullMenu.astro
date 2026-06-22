@@ -5,7 +5,7 @@ import { menuLeft, menuRight, site } from '@data/content';
 
 <section
 	id='menu'
-	class='scroll-mt-20 bg-brand-cream-dark/40 py-20 md:py-28'
+	class='scroll-mt-20 bg-brand-cream py-20 md:py-28'
 	aria-labelledby='menu-title'
 >
 	<div class='container'>
@@ -37,11 +37,16 @@ import { menuLeft, menuRight, site } from '@data/content';
 			</div>
 		</div>
 
-		<p class='mt-10 text-center text-sm text-brand-ink/60'>
-			Hungry? Call us to place your order — <a
+		<div class='mt-12 text-center'>
+			<a
 				href={site.phoneHref}
-				class='font-semibold text-brand-red underline-offset-2 hover:underline'>{site.phone}</a
+				class='btn btn-dark'
 			>
-		</p>
+				<i
+					class='ri-phone-fill'
+					aria-hidden='true'></i>
+				Hungry? Call to Order now
+			</a>
+		</div>
 	</div>
 </section>

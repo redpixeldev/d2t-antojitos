@@ -4,15 +4,15 @@ import { hours, site } from '@data/content';
 
 <section
 	id='visit'
-	class='scroll-mt-20 bg-brand-cream py-20 md:py-28'
+	class='scroll-mt-20 bg-brand-cream pt-16 pb-20 md:pb-24'
 	aria-labelledby='visit-title'
 >
-	<div class='container grid gap-12 lg:grid-cols-2 lg:gap-16'>
+	<div class='container grid items-start gap-12 lg:grid-cols-2 lg:gap-16'>
 		<div>
-			<p class='script-accent text-brand-red'>Come say hola</p>
+			<p class='script-accent text-[#e33127]'>Come say hola</p>
 			<h2
 				id='visit-title'
-				class='mt-1 text-4xl uppercase md:text-6xl'
+				class='mt-1 text-4xl text-brand-charcoal uppercase md:text-6xl'
 			>
 				Visit Us
 			</h2>
@@ -23,7 +23,7 @@ import { hours, site } from '@data/content';
 						class='ri-map-pin-2-fill mt-1 text-brand-red'
 						aria-hidden='true'></i>
 					<span>
-						{site.address.street}<br />
+						{site.address.street},<br />
 						{site.address.city}
 					</span>
 				</p>
@@ -52,7 +52,7 @@ import { hours, site } from '@data/content';
 				</a>
 				<a
 					href={site.phoneHref}
-					class='btn btn-dark text-base'
+					class='btn border border-brand-charcoal bg-white text-base font-bold text-brand-charcoal transition-colors hover:bg-brand-charcoal hover:text-white'
 				>
 					<i
 						class='ri-phone-fill'
@@ -62,20 +62,21 @@ import { hours, site } from '@data/content';
 			</div>
 		</div>
 
-		<!-- Opening hours -->
-		<div class='rounded-3xl border border-brand-cream-dark bg-white/60 p-7 shadow-sm md:p-9'>
-			<h3 class='flex items-center gap-3 text-2xl uppercase text-brand-charcoal'>
-				<i
-					class='ri-time-line text-brand-red'
-					aria-hidden='true'></i>
-				Opening Hours
-			</h3>
-			<dl class='mt-6 divide-y divide-brand-cream-dark'>
+		<!-- Opening hours card -->
+		<div class='overflow-hidden rounded-2xl border-2 border-[#2a2017] bg-white shadow-lg shadow-brand-charcoal/10'>
+			<div class='bg-[#2a2017] px-7 py-5'>
+				<h3 class='font-body text-lg font-bold tracking-wide text-white uppercase'>Opening Hours</h3>
+			</div>
+			<dl class='px-7 pt-1 pb-12'>
 				{
-					hours.map((row) => (
-						<div class='flex items-center justify-between py-3.5'>
-							<dt class='font-medium text-brand-ink'>{row.days}</dt>
-							<dd class={row.closed ? 'font-semibold text-brand-red' : 'text-brand-ink/80'}>{row.time}</dd>
+					hours.map((row, i) => (
+						<div
+							class={`flex items-center justify-between py-5 ${
+								i < hours.length - 1 ? 'border-b border-dotted border-brand-charcoal/15' : ''
+							}`}
+						>
+							<dt class='font-bold text-brand-charcoal'>{row.days}</dt>
+							<dd class={row.closed ? 'font-bold text-brand-red' : 'font-bold text-[#2f9e44]'}>{row.time}</dd>
 						</div>
 					))
 				}

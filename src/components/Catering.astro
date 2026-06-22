@@ -4,12 +4,12 @@ import { site } from '@data/content';
 
 <section
 	id='catering'
-	class='scroll-mt-20 bg-brand-amber py-20 md:py-28'
+	class='scroll-mt-20 bg-brand-amber py-20 md:py-24'
 	aria-labelledby='catering-title'
 >
 	<div class='container grid items-center gap-12 lg:grid-cols-2 lg:gap-16'>
 		<div>
-			<p class='script-accent text-brand-red'>Feeding a crowd?</p>
+			<p class='script-accent text-[#e33127]'>Feeding a crowd?</p>
 			<h2
 				id='catering-title'
 				class='mt-1 text-4xl uppercase text-brand-charcoal md:text-6xl'
@@ -17,28 +17,33 @@ import { site } from '@data/content';
 				We Cater
 			</h2>
 			<p class='mt-5 max-w-lg text-lg text-brand-charcoal/80'>
-				Birthdays, weddings, graduations — bring the streets of Santo Domingo to your table. Big trays of rice, roast
-				pork, plantains, empanadas and more, ready when you are.
+				Birthdays, meetings, graduations — bring the streets of Santo Domingo to your table. Big trays of rice, roast
+				chicken, plantains and more, ordered in a few clicks on ezCater.
 			</p>
 			<a
-				href={site.cateringUrl}
-				target='_blank'
-				rel='noopener noreferrer'
+				href={site.phoneHref}
 				class='btn btn-dark mt-8 text-base'
 			>
 				<i
-					class='ri-shopping-bag-3-line'
+					class='ri-restaurant-2-line'
 					aria-hidden='true'></i>
-				Order Catering on ezCater
+				Call us to Order Catering
 			</a>
 		</div>
 
 		<div class='relative'>
-			<div class='overflow-hidden rounded-[2rem] bg-brand-charcoal p-3 shadow-2xl shadow-brand-charcoal/20'>
+			<!-- Red offset card peeking out bottom-left -->
+			<div
+				class='absolute inset-0 -translate-x-4 translate-y-4 rounded-[2rem] bg-brand-red'
+				aria-hidden='true'
+			>
+			</div>
+
+			<div class='relative overflow-hidden rounded-[2rem] shadow-2xl shadow-brand-charcoal/25'>
 				<img
-					src='/img/catering.jpg'
+					src='/img/cater.jpg'
 					alt='A generous catering spread of assorted Dominican dishes'
-					class='aspect-[4/3] w-full rounded-[1.5rem] object-cover'
+					class='aspect-[4/3] w-full object-cover border-3 border-black rounded-[2rem]'
 					loading='lazy'
 					decoding='async'
 				/>

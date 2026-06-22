@@ -3,18 +3,18 @@ import { gallery, site } from '@data/content';
 ---
 
 <section
-	class='bg-brand-cream pt-20 md:pt-28'
+	class='bg-brand-cream pt-20 md:pt-24'
 	aria-label='Photo gallery'
 >
 	<div class='container'>
-		<div class='grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4'>
+		<div class='grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6'>
 			{
 				gallery.map((photo) => (
 					<a
 						href={site.social.instagram}
 						target='_blank'
 						rel='noopener noreferrer'
-						class='group relative block overflow-hidden rounded-2xl focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red'
+						class='group relative block overflow-hidden rounded-2xl border-3 border-brand-charcoal focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-red'
 					>
 						<img
 							src={photo.img}

@@ -1,19 +1,19 @@
 ---
 import { tickerItems } from '@data/content';
 // Duplicate the list so the marquee can loop seamlessly (-50% translate).
-const loop = [...tickerItems, ...tickerItems];
+const loop = [...tickerItems, ...tickerItems, ...tickerItems, ...tickerItems];
 ---
 
 <div
-	class='marquee overflow-hidden bg-brand-charcoal py-2 text-white'
+	class='marquee overflow-hidden bg-[#241b12] py-2.5'
 	aria-hidden='true'
 >
-	<div class='animate-marquee flex w-max items-center gap-0 whitespace-nowrap'>
+	<div class='animate-marquee flex w-max items-center whitespace-nowrap'>
 		{
 			loop.map((item) => (
-				<span class='flex items-center gap-6 pr-6 text-xs font-semibold tracking-[0.2em] uppercase text-white/80'>
+				<span class='flex items-center gap-3 pr-3 text-[13px] font-semibold tracking-[0.04em] uppercase text-brand-amber'>
 					{item}
-					<i class='ri-heart-3-fill text-brand-amber' />
+					<i class='ri-star-fill text-[0.8em] text-brand-amber/90' />
 				</span>
 			))
 		}

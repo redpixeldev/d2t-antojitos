@@ -34,99 +34,99 @@ export const hours = [
 ];
 
 export const tickerItems = [
-	'Santo Domingo',
+	'Morir Soñando',
+	'¡Buen Provecho!',
+	'Authentic Dominican',
 	'Somerville, MA',
-	'Dominican Grub',
-	'Made Fresh Daily',
-	'507 Medford St',
+	'Homemade Every Day',
 ];
 
 export const highlights = {
 	feature: {
-		name: 'Chimichurri',
-		desc: 'The Dominican street burger — beef, cabbage, onion, tomato, pink sauce on toasted pan.',
+		name: 'Regular Lunch',
+		desc: 'The Dominican flag: rice, beans, chicken or pork',
 		price: '$12.99',
 		img: '/img/feature-chimichurri.jpg',
 		alt: 'Dominican plato — yellow rice, roast chicken and fried plantain with an orchid garnish',
 	},
 	cards: [
 		{
-			name: 'Yaroa',
-			desc: 'Loaded plantains or fries',
+			name: 'Chimi',
+			desc: 'Butter-soft Pork or Chicken Sandwich',
 			price: '$7.99',
-			img: '/img/card-yaroa.jpg',
-			alt: 'Dominican street-food stall with fried plantains, fries and skewers',
+			img: '/img/chimi.png',
+			alt: 'Dominican street-food chimi',
 		},
 		{
-			name: 'Mofongo',
-			desc: 'Plantains, garlic & fried pork',
-			price: '$15.99',
-			img: '/img/card-mofongo.jpg',
-			alt: 'Takeout box of fried chicken, plantains and cassava',
+			name: 'Empanadas',
+			desc: 'Cheese, Double Cheese, Ham & Cheese, Vegetables, Beef, Chicken, Corn',
+			price: '$5.80',
+			img: '/img/empanadas.png',
+			alt: 'Empanadas',
 		},
 		{
-			name: 'Tres Golpes',
-			desc: 'The Dominican breakfast',
-			price: '$13.99',
+			name: 'Chicharron',
+			desc: 'Basket of fried pork, fried cheese and tostones with lime',
+			price: '$14.99',
 			img: '/img/card-tresgolpes.jpg',
 			alt: 'Basket of fried pork, fried cheese and tostones with lime',
 		},
 	],
 };
 
-export type MenuItem = { name: string; note?: string; price: string };
+export type MenuItem = { name: string; note?: string; price?: string };
 export type MenuCategory = { title: string; icon: string; items: MenuItem[] };
 
 export const menuLeft: MenuCategory[] = [
 	{
 		title: 'With Bread',
-		icon: 'ri-sandwich-line',
+		icon: 'ri-bread-line',
 		items: [
-			{ name: 'Chicken Sandwich', note: 'shredded chicken, lettuce, tomato', price: '$9.99' },
-			{ name: 'Ham & Cheese Sandwich', note: 'pork, ham, cheddar', price: '$9.99' },
-			{ name: 'Sandwich Completo', note: 'beef, chicken, pork, cheddar', price: '$14.99' },
-			{ name: 'Club Sandwich', note: 'shredded chicken, lettuce, tomato', price: '$16.99' },
-			{ name: 'Derretido de Queso', note: 'butter, cheddar, veg', price: '$6.99' },
-			{ name: 'Double Cheese', note: 'white, yellow & cheddar', price: '$8.99' },
-			{ name: 'Cuban Sandwich', note: 'pork, swiss, ham, pickles', price: '$14.99' },
+			{ name: 'Chicken Sandwich', note: 'shredded chicken, tomato, onion, lettuce, ketchup, mayo', price: '$9.99' },
+			{ name: 'Ham & Cheese Sandwich', note: 'pork, ham, cheddar, tomato, onion, lettuce, ketchup, mayo', price: '$9.99' },
+			{ name: 'Sandwich Completo', note: 'beef, chicken, pork, cheddar + the works', price: '$14.99' },
+			{ name: 'Club Sandwich', note: 'shredded chicken, tomato, onion, lettuce, ketchup, mayo', price: '$16.99' },
+			{ name: 'Derretido de Queso', note: 'butter, cheddar, tomato, onion, lettuce, ketchup, mayo', price: '$6.99' },
+			{ name: 'Double Cheese', note: 'butter, white/yellow/cheddar, tomato, onion, lettuce', price: '$8.99' },
+			{ name: 'Cuban Sandwich', note: 'pork, swiss, ham, pickles, mustard, ketchup', price: '$14.99' },
 		],
 	},
 	{
 		title: 'Fried Meats',
 		icon: 'ri-restaurant-2-line',
 		items: [
-			{ name: 'Wings', note: 'with a side', price: '$14.99' },
-			{ name: 'Chicken Tenders', note: 'with a side', price: '$14.99' },
-			{ name: 'Smoked Pork Chop', note: 'with a side', price: '$14.99' },
-			{ name: 'Chicharrón (Pork)', note: 'with a side', price: '$14.99' },
-			{ name: 'Fried Carnitas (Beef)', note: 'with a side', price: '$14.99' },
-			{ name: 'Dominican Sausage', note: 'with a side', price: '$11.99' },
+			{ name: 'Wings · with a side', price: '$14.99' },
+			{ name: 'Chicken Tenders · with a side', price: '$14.99' },
+			{ name: 'Smoked Pork Chop · with a side', price: '$14.99' },
+			{ name: 'Chicharrón (pork) · with a side', price: '$14.99' },
+			{ name: 'Fried Carnitas (beef) · with a side', price: '$14.99' },
+			{ name: 'Dominican Sausage · with a side', price: '$11.99' },
 		],
 	},
 	{
 		title: 'Yaroa',
 		icon: 'ri-bowl-line',
 		items: [
-			{ name: 'Yaroa', note: 'chicken, pork or beef · small', price: '$7.99' },
-			{ name: 'Yaroa', note: 'plantains or fries, cheese · large', price: '$14.99' },
+			{ name: 'Yaroa — Small', note: 'chicken, pork or beef · plantains or fries, cheese, ketchup, mayo', price: '$7.99' },
+			{ name: 'Yaroa — Large', note: 'chicken, pork or beef · plantains or fries, cheese, ketchup, mayo', price: '$14.99' },
 		],
 	},
 	{
 		title: 'Lunch Special',
 		icon: 'ri-calendar-todo-line',
-		items: [{ name: 'Regular Lunch', note: 'rice, beans, chicken & pork', price: '$12.99' }],
+		items: [{ name: 'Regular Lunch', note: 'rice, beans, chicken, pork (extra for beef, oxtail or goat)', price: '$12.99' }],
 	},
 	{
 		title: 'Empanadas',
 		icon: 'ri-pie-chart-2-line',
 		items: [
-			{ name: 'Cheese', price: '$3 / $5.80' },
-			{ name: 'Ham & Cheese', price: '$3 / $5.80' },
-			{ name: 'Double Cheese', price: '$3 / $5.80' },
-			{ name: 'Vegetables', price: '$3 / $5.80' },
-			{ name: 'Beef', price: '$3 / $5.80' },
-			{ name: 'Chicken', price: '$3 / $5.80' },
-			{ name: 'Corn', price: '$3 / $5.80' },
+			{ name: 'Cheese', note: 'Small $3 / Large', price: '$5.80' },
+			{ name: 'Ham & Cheese', note: 'Small $3 / Large', price: '$5.80' },
+			{ name: 'Double Cheese', note: 'Small $3 / Large', price: '$5.80' },
+			{ name: 'Vegetables', note: 'Small $3 / Large', price: '$5.80' },
+			{ name: 'Beef', note: 'Small $3 / Large', price: '$5.80' },
+			{ name: 'Chicken', note: 'Small $3 / Large', price: '$5.80' },
+			{ name: 'Corn', note: 'Small $3 / Large', price: '$5.80' },
 		],
 	},
 ];
@@ -134,34 +134,34 @@ export const menuLeft: MenuCategory[] = [
 export const menuRight: MenuCategory[] = [
 	{
 		title: 'Antojos',
-		icon: 'ri-fish-line',
+		icon: 'ri-restaurant-line',
 		items: [
-			{ name: 'Canasticas', note: 'plantain baskets + meat', price: '$11.99' },
-			{ name: 'Shredded Pork on a Plate', note: 'cabbage, pepper, onion', price: '$12.99' },
+			{ name: 'Canasticas', note: 'fried green plantain baskets + veg, pork/chicken/beef', price: '$11.99' },
+			{ name: 'Shredded Pork on a Plate', note: 'cabbage, green pepper, onion, cheese, mayo, ketchup', price: '$12.99' },
 			{ name: 'Grilled Chicken Breast', price: '$15.99' },
-			{ name: 'Salchipapa', note: 'small / large', price: '$6.99 / $10.99' },
-			{ name: 'Mofongo', note: 'plantains, garlic, fried pork', price: '$15.99' },
-			{ name: 'Patacón', note: 'stuffed green plantain', price: '$13.99' },
+			{ name: 'Salchipapa', note: 'fries, sausage, melted cheese, ketchup, mayo, mustard · Sm $6.99', price: '$10.99' },
+			{ name: 'Mofongo', note: 'plantains, garlic, butter, fried pork', price: '$15.99' },
+			{ name: 'Patacón', note: 'fried green plantain stuffed with meat, lettuce, tomato, onion', price: '$13.99' },
 		],
 	},
 	{
 		title: 'In the Corner',
-		icon: 'ri-hamburger-line',
+		icon: 'ri-fire-line',
 		items: [
-			{ name: 'Chimichurri', note: 'beef, cabbage, onion, tomato', price: '$12.99' },
+			{ name: 'Chimichurri', note: 'bread, beef, cabbage, onion, tomato, ketchup, mayo', price: '$12.99' },
 			{ name: 'Chicken Chimi', price: '$11.99' },
 			{ name: 'Pork Chimi', price: '$11.99' },
-			{ name: 'Hamburger', note: 'beef, bacon, lettuce', price: '$12.99' },
+			{ name: 'Hamburger', note: 'beef, bacon, lettuce, onion, tomato, ketchup, mayo', price: '$12.99' },
 			{ name: 'Chicken Hamburger', price: '$11.99' },
-			{ name: 'Hot Dog DR', note: 'cabbage, corn, cheese, chips', price: '$7.99' },
+			{ name: 'Hot Dog DR', note: 'sausage, cabbage, corn, melted cheese, chips', price: '$7.99' },
 		],
 	},
 	{
 		title: 'Breakfast',
 		icon: 'ri-sun-line',
 		items: [
-			{ name: 'Tres Golpes / Mangú', note: 'plantains, cheese, salami, eggs', price: '$13.99' },
-			{ name: 'Cassava / Yuca', note: 'cheese, salami, eggs', price: '$12.99' },
+			{ name: 'Tres Golpes / Mangú', note: 'mashed plantains, onion, fried cheese, fried salami, fried eggs', price: '$13.99' },
+			{ name: 'Cassava / Yuca', note: 'boiled cassava, onion, fried cheese, fried salami, fried eggs', price: '$12.99' },
 			{ name: 'Bacon Egg Cheese', price: '$5.99' },
 		],
 	},
@@ -169,24 +169,15 @@ export const menuRight: MenuCategory[] = [
 		title: 'Natural Juices',
 		icon: 'ri-goblet-line',
 		items: [
-			{ name: 'Morir Soñando', note: '16 / 20 / 24 oz', price: '$4.99+' },
-			{ name: 'Passion Fruit', price: '$4.99+' },
-			{ name: 'Tamarindo', price: '$4.99+' },
-			{ name: 'Guanábana', price: '$4.99+' },
-			{ name: 'Orange · Lemon', price: '$4.99+' },
-			{ name: 'Guava · Acerola', price: '$4.99+' },
+			{ name: '16oz / 20oz / 24oz', note: 'with milk +$1', price: '$4.99' },
+			{ name: 'Flavors', note: 'Lemon · Orange · Morir Soñando · Passion Fruit · Tamarindo · Guava · Acerola · Guanábana' },
 		],
 	},
 	{
 		title: 'Sides',
 		icon: 'ri-leaf-line',
 		items: [
-			{ name: 'Fried Plantains', note: 'green or yellow', price: '$3.99' },
-			{ name: 'Boiled / Fried Cassava', price: '$3.99' },
-			{ name: 'French Fries', price: '$3.99' },
-			{ name: 'Green Banana', price: '$3.99' },
-			{ name: 'Rice', price: '$3.99' },
-			{ name: 'Beans', price: '$3.99' },
+			{ name: 'Each $3.99', note: 'Green/Yellow Plantains · Boiled/Fried Cassava · Fries · Green Banana · Rice · Beans' },
 		],
 	},
 	{
@@ -202,12 +193,9 @@ export const menuRight: MenuCategory[] = [
 		title: 'Drinks',
 		icon: 'ri-cup-line',
 		items: [
-			{ name: 'Soda', price: '$1.25' },
-			{ name: 'Country Club', price: '$2.60' },
-			{ name: 'Jarrito', price: '$2.60' },
-			{ name: 'Malta Morena', price: '$2.99' },
-			{ name: 'Water', price: '$0.99' },
-			{ name: 'Coffee', price: '$1.99' },
+			{ name: 'Soda $1.25 · Country Club $2.60 · Jarrito $2.60' },
+			{ name: 'Gatorade $2.50 · Malta $2.99 · Water $0.99' },
+			{ name: 'Red Bull $2.99 · Hot Chocolate $2.50 · Coffee $1.99' },
 		],
 	},
 ];
@@ -240,8 +228,8 @@ export const reviews = [
 ];
 
 export const gallery = [
-	{ img: '/img/gallery-1.jpg', alt: 'Dominican rice with stewed meat and sweet plantains' },
-	{ img: '/img/gallery-2.jpg', alt: 'Glass of fresh natural fruit juice' },
-	{ img: '/img/gallery-3.jpg', alt: 'Golden sweet fried plantains (maduros)' },
-	{ img: '/img/gallery-4.jpg', alt: 'Crispy fried green plantains (tostones)' },
+	{ img: '/img/gallery-5.jpg', alt: 'Mangú con los tres golpes — mashed plantains with fried salami, cheese and egg' },
+	{ img: '/img/gallery-2.jpg', alt: 'Carne guisada — stewed beef served with white rice' },
+	{ img: '/img/gallery-3.jpg', alt: 'Sancocho — hearty Dominican meat and root-vegetable stew' },
+	{ img: '/img/gallery-4.jpg', alt: 'Chimi-style burgers with bacon, lettuce, cheese and pink sauce' },
 ];

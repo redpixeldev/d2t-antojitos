@@ -30,7 +30,8 @@ public/
 ```
 
 **Key patterns:**
-- Layout.astro imports main.css and loads Alpine.js via CDN
+- All client JS is centralized in `src/scripts/main.ts` (the single bundled entry: starts Alpine, inits per-component widgets like the reviews Swiper). Layout.astro loads it via one `<script>import '../scripts/main'</script>`, producing a single `assets/main.js`. Don't add per-component `<script>` tags — they become separate bundles; wire new client code through `main.ts` instead.
+- Layout.astro imports main.css
 - Tailwind v4 uses CSS-first config with `@theme`, `@utility`, and `@plugin` directives in main.css
 - Custom utilities: `container`, `btn`, `btn-primary`
 - Theme variables: `--font-heading`, `--font-body`, `--color-brand-primary`

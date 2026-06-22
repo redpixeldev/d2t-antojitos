@@ -1,6 +1,7 @@
 import Swiper from 'swiper';
 import { Navigation, Pagination, A11y, Keyboard, Autoplay } from 'swiper/modules';
-import 'swiper/css';
+// Swiper core CSS is imported globally in src/styles/main.css so it survives the
+// production build (CSS imported inside client <script> is dropped by Astro here).
 
 export function initReviews() {
 	const init = () => {

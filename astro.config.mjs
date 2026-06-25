@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 
-import cloudflare from '@astrojs/cloudflare';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   compressHTML: false,
@@ -11,6 +11,7 @@ export default defineConfig({
 	},
 
   vite: {
+      plugins: [tailwindcss()],
       build: {
           assetsInlineLimit: 0,
           rollupOptions: {
@@ -23,5 +24,4 @@ export default defineConfig({
 	},
 
   output: 'static',
-  adapter: cloudflare(),
 });
